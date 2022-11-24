@@ -54,11 +54,12 @@ class UsersController {
       name = ?,
       email = ?,
       password = ?,
-      updated_at = DATETIME('now'),
+      updated_at = ?
       WHERE id = ?`,
 
       [user.name, user.email, user.password, new Date(), id]
     );
+    return response.status(200).json();
   } // update - PUT para atualizar um registro.
 }
 
