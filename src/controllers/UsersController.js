@@ -69,15 +69,12 @@ class UsersController {
       name = ?,
       email = ?,
       password = ?,
-<<<<<<< Updated upstream
-      updated_at = DATETIME('now'),
-=======
       updated_at = DATETIME('now')
->>>>>>> Stashed changes
       WHERE id = ?`,
 
       [user.name, user.email, user.password, id]
     );
+    return response.json();
   } // update - PUT para atualizar um registro.
 }
 
