@@ -3,7 +3,7 @@ const AppError = require("../utils/AppError");
 const DiskStorage = require("../providers/DiskStorage");
 
 class UserAvatarController {
-  async create(request, response) {
+  async update(request, response) {
     const user_id = request.user.id;
     const avatarFilename = request.file.filename;
 
@@ -18,7 +18,7 @@ class UserAvatarController {
       );
     }
 
-    if (!user.avatar) {
+    if (user.avatar) {
       await diskStorage.deleteFile(user.avatar);
     }
 
